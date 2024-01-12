@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cepha coming soon</title>
+    <link rel="stylesheet" href="style.css" type="text/css ">
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <p><h2>@50 resort presents </h2></p>
+            <h1>Dj BRYTAH ft Mc SPYDER</h1>
+            <div class="launch-time">
+                <div>
+                    <p id="days">00</p>
+                    <span>Days</span>
+                </div>
+                <div>
+                    <p id="hours">00</p>
+                    <span>Hours</span>
+                </div>
+                <div>
+                    <p id="minutes">00</p>
+                    <span>Minutes</span>
+                </div>
+                <div>
+                    <p id="seconds">00</p>
+                    <span>Seconds</span>
+                </div>
+            </div>
+            <button onclick="button">BOOK SEAT</b></button>
+
+        </div>
+    </div>
+    <script>
+		let x = setInterval(() => {
+			let countDownDate = new Date('Jan 18, 2024 00:00:00') .getTime()
+			let now = new Date().getTime()
+			let distance =countDownDate - now
+
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			
+			document.getElementById("days").innerHTML =days;
+			document.getElementById("hours").innerHTML =hours;
+			document.getElementById("minutes").innerHTML =minutes;
+			document.getElementById("seconds").innerHTML =seconds;
+			if (distance < 0) {
+				clearInterval(x);
+				document.getElementById("demo").innerHTML = "EXPIRED";
+				
+			}
+	}, 1000)
+
+	</script>
+</body>      
+</html>
